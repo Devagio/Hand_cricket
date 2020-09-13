@@ -36,20 +36,29 @@ function freeze(){
 	ten_dom.remove();
 }
 
-function wicket() {
+function wicket(choice) {
 	innings = innings + 1;
-	exclaim_dom.innerHTML = "It's a Wicket!"
+	exclaim_dom.innerHTML = "It's a Wicket!";
 	if(innings === 2) {
-		userState_dom.innerHTML = "User - Bowling"
-		compState_dom.innerHTML = "Computer - Batting"
+		userState_dom.innerHTML = "User - Bowling";
+		compState_dom.innerHTML = "Computer - Batting";
+		userState_dom.classList.remove("red-back");
+		compState_dom.classList.remove("green-back");
+		userState_dom.classList.add("green-back");
+		compState_dom.classList.add("red-back");
+		userScore_dom.classList.add("red-back");
+		setTimeout(function() {userScore_dom.classList.remove("red-back")}, 200);
 	}
 	if(innings === 3) {
+		compScore_dom.classList.add("red-back");
+		setTimeout(function() {compScore_dom.classList.remove("red-back")}, 200);
 		if(userScore > compScore) {
-			message_dom.innerHTML = "User wins!";
+			message_dom.innerHTML = "User wins! Press F5 to play again.";
+			message_dom.classList.add("green-back");
 			freeze();
 		}
 		else{
-			message_dom.innerHTML = "It's a Draw!";
+			message_dom.innerHTML = "It's a Draw! Press F5 to play again.";
 			freeze();
 		}
 	}
@@ -61,13 +70,20 @@ function notWicket(choice) {
 	if(innings === 1) {
 		userScore = userScore + choice;
 		userScore_dom.innerHTML = userScore;
+		userScore_dom.classList.add("green-back");
+		setTimeout(function() {userScore_dom.classList.remove("green-back")}, 200);
 	}
 	else {
 		compScore = compScore + choice;
 		compScore_dom.innerHTML = compScore;
+		compScore_dom.classList.add("green-back");
+		setTimeout(function() {compScore_dom.classList.remove("green-back")}, 200);
+
 		if(userScore < compScore) {
 			innings = innings + 1;
-			message_dom.innerHTML = "Computer wins!";
+			message_dom.innerHTML = "Computer wins! Press F5 to play again.";
+			message_dom.classList.add("red-back");
+			exclaim_dom.innerHTML = "Oh! No.";
 			freeze();
 		}
 	}
@@ -152,7 +168,7 @@ function game(userChoice) {
 	comp_pic(compChoice);
 
 	if(userChoice === compChoice) {
-		wicket();
+		wicket(userChoice);
 	}
 	else{
 		if(innings === 1){
@@ -198,4 +214,6 @@ function main() {
 	})
 }
 
+userState_dom.classList.add("red-back");
+compState_dom.classList.add("green-back");
 main();

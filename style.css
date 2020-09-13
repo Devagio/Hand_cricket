@@ -36,7 +36,7 @@ header > h1 {
 }
 
 .avatar > img {
-	height: 250px;
+	height: 225px;
 	margin: 15px;
 }
 
@@ -45,7 +45,7 @@ header > h1 {
 }
 
 .sign > img {
-	border: 5px solid green;
+	border: 5px solid purple;
 	border-radius: 50%;
 	width: 150px;
 	height: 150px;
@@ -53,8 +53,25 @@ header > h1 {
 }
 
 #play-area {
-	height: 260px;
+	height: 285px;
 	width: 500px;
+}
+
+.score, .info, .exclamation, .message {
+	background-color: purple;
+	color: white;
+	font-family: serif;
+	font-size: 30px;
+	font-style: bold;
+	margin-bottom: 5px;
+}
+
+.green-back {
+	background-color: green;
+}
+
+.red-back {
+	background-color: red;
 }
 
 .choice > img {
@@ -79,7 +96,34 @@ header > h1 {
 
 .choice:hover {
 	cursor: pointer;
-	border: 10px solid red;
+	border: 10px solid purple;
 	margin: 15px;
+}
 
+@media(max-width: 1300px){
+	.window {
+		width: 190px;
+		height: 220px;
+	}
+
+	#play-area {
+		width: 350px;
+		height: 195px;
+	}
+
+	.avatar > img {
+		height: 125px;
+		margin: 10px;
+	}
+
+	.sign > img {
+		width: 100px;
+		height: 100px;
+		margin: 10px;
+	}
+
+	.score, .info, .exclamation, .message {
+		font-size: 20px;
+		margin-bottom: 5px;
+	}
 }
