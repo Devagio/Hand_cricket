@@ -1,0 +1,85 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: black;
+	color: white;
+}
+
+header {
+	background: purple;
+	padding: 10px;
+}
+
+header > h1 {
+	color: white;
+	text-align: center;
+	font-family: serif;
+}
+
+.zone {
+	text-align: center;
+}
+
+.window {
+	background-color: white;
+	margin: 10px;
+	padding: 10px;
+	color: black;
+	display: inline-block;
+	width: 350px;
+	height: 350px;
+	text-align: center;
+}
+
+.avatar > img {
+	height: 250px;
+	margin: 15px;
+}
+
+.sign {
+	display: inline-block;
+}
+
+.sign > img {
+	border: 5px solid green;
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	margin: 20px;
+}
+
+#play-area {
+	height: 260px;
+	width: 500px;
+}
+
+.choice > img {
+	border: 1px solid white;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+}
+
+.choices {
+	text-align: center;
+}
+
+.choice {
+	display: inline-block;
+	border: 5px solid purple;
+	border-radius: 50%;
+	background-color: white;
+	margin: 20px;
+	transition: 0.2s;
+}
+
+.choice:hover {
+	cursor: pointer;
+	border: 10px solid red;
+	margin: 15px;
+
+}
